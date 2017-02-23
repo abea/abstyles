@@ -54,6 +54,11 @@
   line-height: 1;
 }
 
+.sg-tabs-content,
+.sg-pattern-extra,
+.sg-pattern-extra-code,
+.sg-pattern-breadcrumb { margin-top: 0; }
+
 #atoms-logo .sg-pattern-example {
 	display: inline-block;
 }
