@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "timestamp": 1487884737868,
+  "timestamp": 1488300258909,
   "graph": {
     "options": {
       "directed": true,
@@ -83,6 +83,14 @@
         }
       },
       {
+        "v": "00-atoms/images/logo-morph.mustache",
+        "value": {
+          "compileState": "clean",
+          "lineagePath": "../../patterns/01-molecules-logos-logo-name/01-molecules-logos-logo-name.html",
+          "lineagePattern": "molecules-logo-name"
+        }
+      },
+      {
         "v": "00-atoms/images/logo-reversed.mustache",
         "value": {
           "compileState": "clean"
@@ -149,6 +157,22 @@
         }
       },
       {
+        "v": "01-molecules/logos/icons-social.mustache",
+        "value": {
+          "compileState": "clean",
+          "lineagePath": "../../patterns/02-organisms-00-global-header/02-organisms-00-global-header.html",
+          "lineagePattern": "organisms-header"
+        }
+      },
+      {
+        "v": "01-molecules/logos/logo-name.mustache",
+        "value": {
+          "compileState": "clean",
+          "lineagePath": "../../patterns/02-organisms-00-global-header/02-organisms-00-global-header.html",
+          "lineagePattern": "organisms-header"
+        }
+      },
+      {
         "v": "01-molecules/navigation/primary-nav.mustache",
         "value": {
           "compileState": "clean",
@@ -194,8 +218,23 @@
         "value": {}
       },
       {
+        "v": "01-molecules/logos/logo-name.mustache",
+        "w": "00-atoms/images/logo-morph.mustache",
+        "value": {}
+      },
+      {
+        "v": "02-organisms/00-global/header.mustache",
+        "w": "01-molecules/logos/logo-name.mustache",
+        "value": {}
+      },
+      {
         "v": "02-organisms/00-global/header.mustache",
         "w": "01-molecules/navigation/primary-nav.mustache",
+        "value": {}
+      },
+      {
+        "v": "02-organisms/00-global/header.mustache",
+        "w": "01-molecules/logos/icons-social.mustache",
         "value": {}
       }
     ]
