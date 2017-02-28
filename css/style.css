@@ -305,15 +305,15 @@ template {
 }
 
 .text-neut {
-  color: #ef6926;
+  color: #d75c08;
 }
 
 .bg-neut {
-  background-color: #ef6926;
+  background-color: #d75c08;
 }
 
 .pl-swatch-label--neut::after {
-  content: "#ef6926";
+  content: "#d75c08";
 }
 
 .font-secondary {
@@ -701,8 +701,8 @@ green     #859900  operators, other keywords
   width: 5rem;
   min-width: 50%;
   max-width: 80%;
-  height: .125rem;
-  background-color: rgba(57, 51, 49, 0.25);
+  border-top: 0.125rem solid rgba(57, 51, 49, 0.25);
+  border-bottom-width: 0;
 }
 
 .disabled {
@@ -766,10 +766,6 @@ h1,
 .h1 {
   font-size: 2.5rem;
   text-align: center;
-}
-body > header h1, body > header
-.h1 {
-  text-shadow: 3px 3px #544c49;
 }
 
 h2,
@@ -842,6 +838,17 @@ a:hover, a:active, a:focus {
   color: #1d5372;
   text-decoration-style: solid;
 }
+.t-primary a,
+.t-secondary a,
+.t-dark a {
+  color: inherit;
+}
+.t-primary a:hover,
+.t-secondary a:hover,
+.t-dark a:hover {
+  outline: 1px solid currentColor;
+  text-decoration-line: none;
+}
 
 iframe,
 img,
@@ -894,7 +901,7 @@ select {
 }
 
 .l-container {
-  max-width: 42rem;
+  max-width: 64rem;
 }
 .l-container, .l-container--demo {
   margin-right: auto;
@@ -902,16 +909,26 @@ select {
   padding-right: 0.625rem;
   padding-left: 0.625rem;
   width: 100%;
+  max-width: 64rem;
+}
+.l-container--demo p,
+.l-container--demo h1,
+.l-container--demo h2,
+.l-container--demo h3,
+.l-container--demo h4,
+.l-container--demo h5,
+.l-container--demo h6 {
+  margin-right: auto;
+  margin-left: auto;
   max-width: 42rem;
 }
-.l-container--demo {
-  max-width: 50rem;
-}
 
-.l-banner {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  text-align: center;
+.l-single-col {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  max-width: 42rem;
 }
 
 .l-list-inline {
@@ -930,6 +947,16 @@ select {
   height: 2rem;
   padding: .25rem;
   fill: currentColor;
+}
+
+.l-center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.l-flush {
+  margin-top: 0;
 }
 
 .l-listing > * + * {
@@ -952,6 +979,26 @@ body > footer {
 }
 body > main {
   flex-grow: 1;
+}
+
+.banner {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.banner--header {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 53.125em) {
+  .banner--header {
+    flex-direction: row;
+    align-items: initial;
+    justify-content: space-between;
+  }
 }
 
 button,
@@ -1005,14 +1052,14 @@ iframe {
   height: 100%;
 }
 
-@media (min-width: 30em) {
+@media (min-width: 37.5em) {
   .feature {
     margin-right: auto;
     margin-left: auto;
     display: flex;
   }
 }
-@media (min-width: 30em) {
+@media (min-width: 37.5em) {
   .feature .feature__image,
   .feature .feature__description {
     width: calc(50% - 1.25rem);
@@ -1033,24 +1080,74 @@ iframe {
   border: 1px solid #cac5c2;
 }
 
-.logo {
+@media (min-width: 20em) {
+  .logo--name-icon {
+    display: inline-flex;
+    align-items: center;
+    height: 6.25rem;
+  }
+}
+
+.logo-icon {
   min-width: 6.25rem;
+}
+.logo--name-icon .logo-icon {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  max-height: 6.25rem;
+}
+@media (min-width: 20em) {
+  .logo--name-icon .logo-icon {
+    margin-right: 0;
+    margin-left: 0;
+    display: inline-block;
+    min-width: 0;
+    max-height: 100%;
+  }
+}
+
+.logo__outer {
+  fill: #d75c08;
+}
+.t-primary .logo__outer,
+.t-secondary .logo__outer,
+.t-dark .logo__outer {
+  fill: #393331;
+}
+
+.logo__inner {
+  fill: #393331;
+}
+.t-primary .logo__inner,
+.t-secondary .logo__inner,
+.t-dark .logo__inner {
+  fill: #fff;
+}
+
+.logo--name-icon .logo__name {
+  display: block;
+  margin-top: 0;
+}
+@media (min-width: 20em) {
+  .logo--name-icon .logo__name {
+    display: inline-block;
+    margin-left: 1rem;
+  }
 }
 
 .nav--primary {
-  text-align: right;
+  text-align: center;
 }
-
-.t-primary a,
-.t-secondary a,
-.t-dark a {
-  color: inherit;
+@media (min-width: 37.5em) {
+  .nav--primary {
+    text-align: initial;
+  }
 }
-.t-primary a:hover,
-.t-secondary a:hover,
-.t-dark a:hover {
-  outline: 1px solid currentColor;
-  text-decoration-line: none;
+@media (min-width: 53.125em) {
+  .nav--primary {
+    margin-top: 0;
+  }
 }
 
 .t-primary,
@@ -1072,7 +1169,7 @@ iframe {
 }
 
 .t-gray {
-  background-color: #cac5c2;
+  background-color: #e3dedb;
 }
 
 /*# sourceMappingURL=style.css.map */

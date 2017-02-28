@@ -59,13 +59,13 @@
 .sg-pattern-extra-code,
 .sg-pattern-breadcrumb { margin-top: 0; }
 
-#atoms-logo .sg-pattern-example {
+[id^="atoms-logo"] .sg-pattern-example {
 	display: inline-block;
+  max-width: 37.5rem;
 }
 
 #atoms-logo-reversed .sg-pattern-example {
 	background: #444444;
-	display: inline-block;
 }
 
 #molecules-logo-footer-link .sg-pattern-example {
